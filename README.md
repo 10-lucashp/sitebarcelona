@@ -1,3 +1,3 @@
 # sitebarcelona
 Meu primeiro site na etec mcm
-https://10-lucashp.github.io/sitebarcelona/
+https://10-lucashp.github.io/sitebarcelona/index.html
