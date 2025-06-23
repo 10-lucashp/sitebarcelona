@@ -1,2 +1,2 @@
 # sitebarcelona
-https://10-lucashp.github.io/site/index.html
+https://10-lucashp.github.io/sitebarcelona/index.html
