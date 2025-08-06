@@ -1,0 +1,357 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+scroll-behavior: smooth;    
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+body{
+    background: url(../img/camp-nou-4565352_1280.jpg) no-repeat center/cover;
+     font-family: "Coustard", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 900;
+    font-style: normal;
+    p{color: white}
+    p{text-shadow: 5px 5px 5px black;}
+    h1{color: yellow}
+    h1{text-shadow: 10px 10px 10px darkgoldenrod;}
+}
+
+header{
+
+    background-color: #010e6b;
+    padding: 15px 15px 15px 15px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1000; 
+    align-items: center;
+    justify-content: center;
+    padding-left: 1.5em;
+
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+}
+
+nav ul li{
+    margin-left: 20px;
+}
+
+nav ul li a{
+    color: yellow;
+    text-decoration: none;
+}
+
+#surgimento{
+ padding: 35px;
+}
+
+.sobre-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.centro{
+    text-align: center;
+}
+
+.sobre-texto{
+    flex: 1;
+    padding: 20px;
+}
+
+.sobre-texto h1{
+    font-size: 2.0em;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p{
+    font-size: 1;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.fonte{
+    font-family: 0.8em;
+}
+
+
+.banner{
+background:url(../img/banner3.png) no-repeat center/cover;  
+height: 600px;
+display: flex;
+flex-direction: column;
+margin-top: 90px;
+align-items: flex-start;
+justify-content: center;
+padding-left: 30px;
+color: yellow;
+font-size: 1.3em;
+text-align: left;
+}
+
+section{
+    scroll-margin-top: 200px;
+}
+
+header.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+
+.sobre-texto p{
+    font-size: 1;
+    line-height: 1.5;
+    text-align: justify;
+}   
+
+.logo img{
+width: 90px;
+height: auto;
+}
+
+.banner{
+    margin-top: 110px;
+}
+
+.hex-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex: 1;
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.hex {
+    width: 140px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    overflow: hidden;
+    background-color: darkred;
+    position: relative;
+    object-fit: cover;
+}
+.hex img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hex.center:nth-child(5){
+    grid-column: 2;
+}
+
+.hex.center:nth-child(6){
+    grid-column: 3;
+}
+
+h2{
+    color: yellow;
+    text-align: center;
+}
+
+#acao .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+#acao .item {
+  background-color: black;
+  border: 2px solid darkred;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px  darkblue;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+#acao .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px blue;
+}
+
+#acao .item:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 6px red;
+}
+
+#acao .item p {
+  margin-top: 15px;
+  font-size: 0.95em;
+  color: white;
+}
+
+#acao .imagem img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/*modais*/
+.modal{
+    background: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px darkred;
+    margin: auto;
+    text-align: center;
+}
+
+.card h3{
+    margin-top: 0;
+    color: yellow;
+}
+
+.card{
+    max-width: 300px;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal{
+    margin-top: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal:target{
+    display: flex;
+}
+
+.modal-content{
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: justify;
+    box-shadow: yellow;
+    background: url(../img/fundo43.jpg) no-repeat center/cover;     
+}
+
+.modal-content h4{
+    margin-top: 2%;
+    font-size: 1.1rem;
+    margin-bottom: 2%;
+   
+  }
+
+  .listacard{
+    margin-top: 1%;
+    margin-left: 10%;
+  }
+
+  .modal-content h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.4rem;
+  }
+
+.close-btn{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+
+
+@media (max-width:675px){
+    header .container, .sobre-container{
+        flex-direction: column;
+        text-align: center;        
+    }
+
+    nav ul{
+        margin-top: 10px;
+        flex-direction: column;        
+    }
+    
+    .banner{
+        margin-top: 160px;
+    }
+    section{
+        scroll-margin-top: 200px;
+    }
+
+     .modal{
+        margin-top: 100px;
+    } 
+    
+    .modal-content{
+        max-height: 60vh;
+    }   
+}
+
+.galeriaimg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+  gap: 20px;
+  justify-items: center;
+}
+
+.galeriaimg img {
+  width: 100%;
+  max-width: 200px; /* Limita o tamanho das imagens */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Barcelona fc</title>
+    <link rel="stylesheet" href="css/estilo - contato.css">
+    <link rel="shortcut icon" href="img/FCBarcelona.svg.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/oi.jpg" alt="Logo do Barcelona"></a>
+            </div>
+            <nav>
+                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#surgimento">Como surgiu</a></li>
+                    <li><a href="index.html#titulos">Títulos</a></li>
+                    <li><a href="index.html#torcida">Torcida</a></li>
+                    <li><a href="index.html#acao">Ação</a></li>
+                    <li><a href="index.html#galeria">Galeria</a></li>
+                    <li><a href="contato.html">Contato</a></li> 
+
+                 </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="inicio" class="banner">
+        <h1>Encontrou algum erro no site?</h1> 
+        <p> Se possível, por favor, nos informe para que possamos corrigir.</p>
+        <p>  Entre em contato conosco!</p>
+
+    </section>
+
+    <main>
+        <section id="contato">
+            <div class="container">
+                <h1 class="centraliza">Contato</h1>
+                <form class="formulario-contato" action="https://formsubmit.co/honoratopereiralucas99@gmail.com" method="post">
+                    <div class="grupo-form">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                      </div>
+
+                      <div class="grupo-form">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="nome" name="nome" required>
+                      </div>
+                    
+                      <div class="grupo-form">
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" name="idade" min="1" max="110">
+                      </div>
+                    
+                      <div class="grupo-form">
+                        <label>Selecione seu estado</label>
+                        <select id="estado" name="estado">
+                        <option value="acre">Acre</option>
+                        <option value="alagoas">Alagoas</option>
+                        <option value="amapa">Amapá</option>
+                        <option value="amazonas">Amazonas</option>
+                        <option value="bahia">Bahia</option>
+                        <option value="ceara">Ceará</option>
+                        <option value="es">Espírito Santo</option>
+                        <option value="go">Goías</option>
+                        <option value="ma">Maranhão</option>
+                        <option value="mt">Mato Grosso</option>
+                        <option value="mts">Mato Grosso do Sul</option>
+                        <option value="mg">Minas Gerais</option>
+                        <option value="para">Pará</option>
+                        <option value="prb">Paraíba</option>
+                        <option value="prn">Paraná</option>
+                        <option value="per">Pernambuco</option>
+                        <option value="pi">Piauí</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="rn">Rio Grande do Norte</option>
+                        <option value="rs">Rio Grande do Sul</option> 
+                        <option value="ron">Rondônia</option>
+                        <option value="ror">Roraima</option>
+                        <option value="sc">Santa Catarina</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="ser">Sergipe</option>
+                        <option value="to">Tocantins</option>
+
+                     </select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="email">Digite seu email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="grupo-form">
+                        <label for="genero">Selecione seu genêro</label>
+                        <input type="checkbox" name="()" value="masculino"> Masculino
+                        <input type="checkbox" name="()" value="feminino"> Feminino
+                        <input type="checkbox" name="()" value="outrogenero"> Outro
+                    </div>
+                    <div class="grupo-form">
+                        <label>Em que parte do site está o problema?</label>
+                        <select id="lugardoerro" name="lugardoerro">
+                        <option value="logoerro">Logo</option>
+                        <option value="bannererro">Banner</option>
+                        <option value="inicioerro">Ínicio</option>
+                        <option value="comosurgiuerro">Como surgiu</option>
+                        <option value="tituloserro">Títulos</option>
+                        <option value="toercidaerro">Torcida</option>
+                        <option value="acaoerro">Ação</option>
+                        <option value="galeriaerro">Galeria</option>
+                        <option value="contatoerro">Contato</option>
+                     </select>
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="data">Selecione a data de hoje:</label>
+                        <input type="date" id="data" name="data">
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="cor">Escolha o nível do erro de acordo com a cor verde(fraco), azul(médio), vermelho(forte):</label>
+                        <input type="color" id="cor" name="cor">
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="texto">Digite mais detalhadamente o erro e como podemos melhorar o site</label>
+                        <input type="text" id="nome" name="nome" required>
+                      </div>
+
+                    <div class="grupo-form">
+                    <button type="submit" class="btn1">Enviar</button>
+                    <input type="hidden" name="_captcha" value="false">                     
+                    </div>
+
+                    
+
+                </form>
+            </div>
+       </section>
+    </main>
+
+
+
+    <footer>
+        <h1>
+            2025 - Criado por Lucas Honorato - Todos os direitos reservados
+        </h1>
+            
+    </footer>
+
+
+   
+</body>
+</html>
