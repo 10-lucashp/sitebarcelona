@@ -341,14 +341,14 @@ h2{
 
 .galeriaimg {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
   justify-items: center;
 }
 
 .galeriaimg img {
   width: 100%;
-  max-width: 200px; /* Limita o tamanho das imagens */
+  max-width: 200px; 
   height: auto;
   object-fit: cover;
   border-radius: 10px;

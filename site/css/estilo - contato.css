@@ -404,3 +404,61 @@ h2{
    cursor: pointer;
 }
 
+.bannerr10{
+background:url(../img/ronaldinhobanner.jpeg) no-repeat center/cover;  
+height: 600px;
+display: flex;
+flex-direction: column;
+margin-top: 90px;
+align-items: flex-start;
+justify-content: center;
+padding-left: 30px;
+color: yellow;
+font-size: 1.3em;
+text-align: left;
+}
+
+
+.tabela-container {
+  width: 100%;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+}
+
+.tabela-container table {
+  min-width: 600px; 
+}
+
+
+.tabela-ia {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6); 
+  color: white; 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela-ia th, 
+.tabela-ia td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid yellow;
+}
+
+.tabela-ia thead {
+  background: linear-gradient(90deg, red, blue);
+  color: yellow;
+  font-weight: bold;
+}
+
+.tabela-ia tbody tr:hover {
+  background-color: rgba(0, 255, 224, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.tabela-ia tbody tr:last-child td {
+  border-bottom: none;
+}
