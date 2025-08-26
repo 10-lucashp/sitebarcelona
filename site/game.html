@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Barcelona fc</title>
+    <link rel="stylesheet" href="css/estilo - contato.css">
+    <link rel="shortcut icon" href="img/FCBarcelona.svg.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/oi.jpg" alt="Logo do Barcelona"></a>
+            </div>
+            <nav>
+                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#surgimento">Como surgiu</a></li>
+                    <li><a href="index.html#titulos">Títulos</a></li>
+                    <li><a href="index.html#torcida">Torcida</a></li>
+                    <li><a href="index.html#acao">Ação</a></li>
+                    <li><a href="index.html#galeria">Galeria</a></li>
+                    <li><a href="contato.html">Contato</a></li> 
+                    <li><a href="game.html">Jogo</a></li> 
+
+                 </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="inicio" class="bannerr10">
+    <h1>Quiz Barcelona</h1> 
+        <p>10 perguntas teste seu conhecimento!!!</p>
+
+    </section>
+
+      header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .quiz-banner {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .quiz-container .container {
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        button {
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffd633;
+            transform: scale(1.05);
+        }
+
+        #result {
+            font-size: 22px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/oi.jpg" alt="Logo do Barcelona"></a>
+            </div>
+            <nav>
+                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#surgimento">Como surgiu</a></li>
+                    <li><a href="index.html#titulos">Títulos</a></li>
+                    <li><a href="index.html#torcida">Torcida</a></li>
+                    <li><a href="index.html#acao">Ação</a></li>
+                    <li><a href="index.html#galeria">Galeria</a></li>
+                    <li><a href="contato.html">Contato</a></li> 
+                    <li><a href="game.html">Game</a></li> 
+                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="quiz-banner">
+        <h1>Quiz do Barcelona</h1>
+        <p>Responda às perguntas sobre os ídolos e títulos do Barça!</p>
+        <a href="index.html"><p>Voltar ao site</p></a>
+    </section>
+
+    <main>
+        <section class="quiz-container">
+            <div class="container" id="quiz"></div>
+            <div class="container" id="result"></div>
+            <div class="container">
+                <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h1>2025 - Criado por Lucas Honorato - Todos os direitos reservados</h1>
+    </footer>
+
+    <script>
+        const quizData = [
+            { question: "Quem é o maior artilheiro da história do Barcelona?", options: ["Ronaldinho", "Lionel Messi", "Luis Suárez", "Neymar"], answer: "Lionel Messi" },
+            { question: "Em que ano o Barcelona conquistou sua primeira Champions League?", options: ["1992", "2006", "2009", "2015"], answer: "1992" },
+            { question: "Qual jogador ficou conhecido como 'Gaúcho' no Barça?", options: ["Messi", "Ronaldinho", "Xavi", "Iniesta"], answer: "Ronaldinho" },
+            { question: "Quem foi o capitão do Barcelona na final da Champions 2015?", options: ["Xavi", "Puyol", "Iniesta", "Busquets"], answer: "Iniesta" }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const quiz = document.getElementById("quiz");
+        const result = document.getElementById("result");
+        const nextBtn = document.getElementById("nextBtn");
+
+        function loadQuestion() {
+            if (currentQuestion < quizData.length) {
+                const q = quizData[currentQuestion];
+                quiz.innerHTML = `
+                    <div class="question"><h3>${q.question}</h3></div>
+                    ${q.options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join("")}
+                `;
+            } else {
+                quiz.innerHTML = "";
+                nextBtn.style.display = "none";
+                result.innerHTML = `Você acertou ${score} de ${quizData.length} perguntas!`;
+            }
+        }
+
+        function checkAnswer(answer) {
+            if (answer === quizData[currentQuestion].answer) score++;
+            nextBtn.style.display = "block";
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            nextBtn.style.display = "none";
+            loadQuestion();
+        }
+
+        loadQuestion();
+        nextBtn.style.display = "none";
+    </script>
+
+    
+    <main>
+        <section id="contato">
+            <div class="container">
+            </div>
+       </section>
+    </main>
+    
+
+
+
+    <footer>
+        <h1>
+            2025 - Criado por Lucas Honorato - Todos os direitos reservados
+        </h1>
+            
+    </footer>

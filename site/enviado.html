@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História do Barcelona fc</title>
-    <link rel="stylesheet" href="css/estilo - contato.css">
+    <title>Quiz do Barcelona FC</title>
+    <link rel="stylesheet" href="css/estilo-game.css">
     <link rel="shortcut icon" href="img/FCBarcelona.svg.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -26,35 +25,34 @@
                     <li><a href="index.html#acao">Ação</a></li>
                     <li><a href="index.html#galeria">Galeria</a></li>
                     <li><a href="contato.html">Contato</a></li> 
-
+                    <li><a href="game.html">Game</a></li> 
                  </ul>
             </nav>
         </div>
     </header>
-    <section id="inicio" class="banner">
-        <h1>Formulário enviado com sucesso!!!</h1> 
-        <p>O problema será resolvido em breve</p>
-        <a href="https://10-lucashp.github.io/sitebarcelona/site/index.html"><p>Clique aqui para voltar ao site</p></a>
 
+    <section class="quiz-banner">
+        <h1>Quiz do Barcelona</h1>
+        <p>Responda às perguntas sobre os ídolos e títulos do Barça!</p>
+        <a href="index.html"><p>Voltar ao site</p></a>
     </section>
 
     <main>
-        <section id="contato">
-            <div class="container">
+        <section class="quiz-container">
+            <div class="container" id="quiz">
+                <!-- Perguntas vão aparecer aqui via JS -->
             </div>
-       </section>
+            <div class="container" id="result"></div>
+            <div class="container">
+                <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+            </div>
+        </section>
     </main>
 
-
-
     <footer>
-        <h1>
-            2025 - Criado por Lucas Honorato - Todos os direitos reservados
-        </h1>
-            
+        <h1>2025 - Criado por Lucas Honorato - Todos os direitos reservados</h1>
     </footer>
 
-
-   
+    <script src="js/quiz.js"></script>
 </body>
 </html>
