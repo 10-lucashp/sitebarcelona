@@ -35,8 +35,8 @@
         <!-- Tela inicial -->
         <div id="start-screen" class="screen active">
             <div class="quiz-header">
-                <h1 class="quiz-title">Quiz Barcelona</h1>
-                <p class="quiz-subtitle">Teste seus conhecimentos sobre a cidade condal!</p>
+                <h1 class="quiz-title">Quiz FC Barcelona</h1>
+                <p class="quiz-subtitle">Teste seus conhecimentos sobre o time!</p>
             </div>
             <div class="quiz-info">
                 <div class="info-item">
@@ -87,7 +87,7 @@
                     <span id="percentage-text" class="percentage-text">80%</span>
                 </div>
                 <div id="result-message" class="result-message">
-                    Você tem um bom conhecimento sobre Barcelona!
+                    Você tem um bom conhecimento sobre o FC Barcelona!
                 </div>
                 <div class="result-actions">
                     <button id="restart-btn" class="btn btn-primary">Tentar Novamente</button>
@@ -112,102 +112,102 @@
 // Dados do quiz
 const quizData = [
     {
-        question: "Onde fica o estádio do FC Barcelona, inaugurado em 1957?",
+        question: "Qual é o apelido mais comum do FC Barcelona?",
         options: [
-            "Estádio Olímpico Lluís Companys",
+            "Os Merengues",
+            "Os Culés",
+            "Os Colchoneros",
+            "Os Leões"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual é o estádio do FC Barcelona?",
+        options: [
+            "Santiago Bernabéu",
             "Camp Nou",
-            "Estádio Cornellà-El Prat",
+            "Wanda Metropolitano",
             "Mestalla"
         ],
         correct: 1
     },
     {
-        question: "Barcelona possui amplas zonas excluídas ao tráfego, totalizando 130 hectares. A quantos campos de futebol essa área equivale?",
+        question: "Qual jogador é considerado o maior ídolo da história do FC Barcelona?",
         options: [
-            "Aproximadamente 100 campos de futebol",
-            "Aproximadamente 260 campos de futebol",
-            "Aproximadamente 500 campos de futebol",
-            "Aproximadamente 1000 campos de futebol"
+            "Cristiano Ronaldo",
+            "Lionel Messi",
+            "Pelé",
+            "Diego Maradona"
         ],
         correct: 1
     },
     {
-        question: "Qual é o nome do templo expiatório que Antoni Gaudí começou a construir em 1882 e que ainda está em obras?",
+        question: "Quais são as cores tradicionais do uniforme do FC Barcelona?",
         options: [
-            "Casa Batlló",
-            "Parque Güell",
-            "La Sagrada Família",
-            "Casa Milà (La Pedrera)"
-        ],
-        correct: 2
-    },
-    {
-        question: "Em que ano Barcelona se tornou sede dos Jogos Olímpicos, transformando a área costeira em um local de lazer com novas praias?",
-        options: [
-            "1982",
-            "1992",
-            "2002",
-            "2012"
+            "Branco e Preto",
+            "Azul e Grená (Vermelho Escuro)",
+            "Verde e Branco",
+            "Amarelo e Vermelho"
         ],
         correct: 1
     },
     {
-        question: "De acordo com uma das teorias sobre a fundação de Barcelona, quem teria fundado a cidade?",
+        question: "Em que país o FC Barcelona está localizado?",
         options: [
-            "Romanos",
-            "Gregos",
-            "Amílcar Barca (cartagineses)",
-            "Visigodos"
-        ],
-        correct: 2
-    },
-    {
-        question: "Em que dia do ano é celebrado o Dia de Sant Jordi, que inspirou a UNESCO a declarar o Dia Internacional do Livro?",
-        options: [
-            "14 de fevereiro",
-            "23 de abril",
-            "12 de outubro",
-            "25 de dezembro"
+            "Portugal",
+            "Espanha",
+            "Itália",
+            "França"
         ],
         correct: 1
     },
     {
-        question: "Qual é a principal característica de Las Ramblas de Barcelona?",
+        question: "Qual competição o FC Barcelona mais venceu na Europa?",
         options: [
-            "É uma rua tranquila e pouco movimentada",
-            "É um centro financeiro e comercial",
-            "É um célebre local de reunião para turistas e sempre repleto de gente",
-            "É uma área residencial exclusiva"
-        ],
-        correct: 2
-    },
-    {
-        question: "Qual é a principal característica do Bairro Gótico de Barcelona?",
-        options: [
-            "Sua arquitetura moderna e futurista",
-            "Sua arquitetura medieval e sua magia",
-            "Seus arranha-céus e centros comerciais",
-            "Suas praias e vida noturna"
+            "Liga Europa",
+            "Liga dos Campeões da UEFA",
+            "Copa da UEFA",
+            "Recopa Europeia"
         ],
         correct: 1
     },
     {
-        question: "Qual é o nome da rua em Barcelona considerada a mais movimentada da Espanha, com cerca de 3500 pessoas atravessando-a a cada hora?",
+        question: "Qual é o nome da famosa academia de jovens talentos do FC Barcelona?",
         options: [
-            "Passeig de Gràcia",
-            "La Rambla",
-            "Puerta del Ángel",
-            "Carrer de Pelai"
+            "Academia Real",
+            "La Masia",
+            "Fábrica de Talentos",
+            "Escola de Craques"
         ],
-        correct: 2
+        correct: 1
     },
     {
-        question: "Com quantos anos Lionel Messi chegou ao FC Barcelona?",
+        question: "Qual é o nome do principal rival do FC Barcelona na Espanha?",
         options: [
-            "10 anos",
-            "13 anos",
-            "16 anos",
-            "18 anos"
+            "Atlético de Madrid",
+            "Real Madrid",
+            "Valencia CF",
+            "Sevilla FC"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual é o esporte principal praticado pelo FC Barcelona?",
+        options: [
+            "Basquete",
+            "Futebol",
+            "Handebol",
+            "Hóquei"
+        ],
+        correct: 1
+    },
+    {
+        question: "Quantos jogadores entram em campo por cada time em uma partida de futebol?",
+        options: [
+            "9",
+            "11",
+            "7",
+            "10"
         ],
         correct: 1
     }
@@ -376,15 +376,15 @@ function showResults() {
     } else if (percentage >= 70) {
         resultIcon.textContent = "🎉";
         resultTitle.textContent = "Parabéns!";
-        resultMessage.textContent = "Você tem um bom conhecimento sobre Barcelona!";
+        resultMessage.textContent = "Você tem um bom conhecimento sobre o FC Barcelona!";
     } else if (percentage >= 50) {
         resultIcon.textContent = "👍";
         resultTitle.textContent = "Bem!";
-        resultMessage.textContent = "Você sabe algumas coisas sobre Barcelona, mas pode melhorar!";
+        resultMessage.textContent = "Você sabe algumas coisas sobre o FC Barcelona, mas pode melhorar!";
     } else {
         resultIcon.textContent = "📚";
         resultTitle.textContent = "Continue estudando!";
-        resultMessage.textContent = "Que tal aprender mais sobre Barcelona e tentar novamente?";
+        resultMessage.textContent = "Que tal aprender mais sobre o FC Barcelona e tentar novamente?";
     }
     
     showScreen(resultScreen);
@@ -435,10 +435,5 @@ document.addEventListener("DOMContentLoaded", function() {
     showScreen(startScreen);
 });
     </script>
-
-    <footer>
-        <h1>2025 - Criado por Lucas Honorato - Todos os direitos reservados</h1>
-    </footer>   
-
 </body>
 </html>
