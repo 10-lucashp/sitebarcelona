@@ -3,105 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História do Barcelona fc</title>
-    <link rel="stylesheet" href="css/estilo - contato.css">
+    <title>Quiz Barcelona</title>
+    <link rel="stylesheet" href="css/estilogame.css">
     <link rel="shortcut icon" href="img/FCBarcelona.svg.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap" rel="stylesheet">
-
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="img/oi.jpg" alt="Logo do Barcelona"></a>
-            </div>
-            <nav>
-                 <ul>
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#surgimento">Como surgiu</a></li>
-                    <li><a href="index.html#titulos">Títulos</a></li>
-                    <li><a href="index.html#torcida">Torcida</a></li>
-                    <li><a href="index.html#acao">Ação</a></li>
-                    <li><a href="index.html#galeria">Galeria</a></li>
-                    <li><a href="contato.html">Contato</a></li> 
-                    <li><a href="game.html">Jogo</a></li> 
-
-                 </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="inicio" class="bannerr10">
-    <h1>Quiz Barcelona</h1> 
-        <p>10 perguntas teste seu conhecimento!!!</p>
-
-    </section>
-
-      header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .quiz-banner {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(0,0,0,0.6);
-        }
-
-        .quiz-container .container {
-            background: rgba(0,0,0,0.7);
-            padding: 30px;
-            margin: 20px auto;
-            border-radius: 20px;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        button {
-            background: #ffcc00;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #ffd633;
-            transform: scale(1.05);
-        }
-
-        #result {
-            font-size: 22px;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #00ff88;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.8);
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -124,84 +31,414 @@
         </div>
     </header>
 
-    <section class="quiz-banner">
-        <h1>Quiz do Barcelona</h1>
-        <p>Responda às perguntas sobre os ídolos e títulos do Barça!</p>
-        <a href="index.html"><p>Voltar ao site</p></a>
-    </section>
-
-    <main>
-        <section class="quiz-container">
-            <div class="container" id="quiz"></div>
-            <div class="container" id="result"></div>
-            <div class="container">
-                <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+    <div class="container">
+        <!-- Tela inicial -->
+        <div id="start-screen" class="screen active">
+            <div class="quiz-header">
+                <h1 class="quiz-title">Quiz Barcelona</h1>
+                <p class="quiz-subtitle">Teste seus conhecimentos sobre a cidade condal!</p>
             </div>
-        </section>
-    </main>
+            <div class="quiz-info">
+                <div class="info-item">
+                    <span class="info-number">10</span>
+                    <span class="info-text">Perguntas</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-number">4</span>
+                    <span class="info-text">Alternativas</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-number">⏱️</span>
+                    <span class="info-text">Sem limite de tempo</span>
+                </div>
+            </div>
+            <button id="start-btn" class="btn btn-primary">Começar Quiz</button>
+        </div>
+
+        <!-- Tela do quiz -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="question-counter" class="question-counter">1 / 10</span>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text" class="question-text"></h2>
+                <div id="options-container" class="options-container">
+                    <!-- Opções serão inseridas dinamicamente -->
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Anterior</button>
+                <button id="next-btn" class="btn btn-primary" disabled>Próxima</button>
+            </div>
+        </div>
+
+        <!-- Tela de resultado -->
+        <div id="result-screen" class="screen">
+            <div class="result-container">
+                <div id="result-icon" class="result-icon">🎉</div>
+                <h2 id="result-title" class="result-title">Parabéns!</h2>
+                <div id="score-display" class="score-display">
+                    <span id="score-text" class="score-text">8 / 10</span>
+                    <span id="percentage-text" class="percentage-text">80%</span>
+                </div>
+                <div id="result-message" class="result-message">
+                    Você tem um bom conhecimento sobre Barcelona!
+                </div>
+                <div class="result-actions">
+                    <button id="restart-btn" class="btn btn-primary">Tentar Novamente</button>
+                    <button id="review-btn" class="btn btn-secondary">Ver Respostas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de revisão -->
+        <div id="review-screen" class="screen">
+            <div class="review-header">
+                <h2>Revisão das Respostas</h2>
+                <button id="back-to-result" class="btn btn-secondary">Voltar</button>
+            </div>
+            <div id="review-container" class="review-container">
+                <!-- Revisão será inserida dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+// Dados do quiz
+const quizData = [
+    {
+        question: "Onde fica o estádio do FC Barcelona, inaugurado em 1957?",
+        options: [
+            "Estádio Olímpico Lluís Companys",
+            "Camp Nou",
+            "Estádio Cornellà-El Prat",
+            "Mestalla"
+        ],
+        correct: 1
+    },
+    {
+        question: "Barcelona possui amplas zonas excluídas ao tráfego, totalizando 130 hectares. A quantos campos de futebol essa área equivale?",
+        options: [
+            "Aproximadamente 100 campos de futebol",
+            "Aproximadamente 260 campos de futebol",
+            "Aproximadamente 500 campos de futebol",
+            "Aproximadamente 1000 campos de futebol"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual é o nome do templo expiatório que Antoni Gaudí começou a construir em 1882 e que ainda está em obras?",
+        options: [
+            "Casa Batlló",
+            "Parque Güell",
+            "La Sagrada Família",
+            "Casa Milà (La Pedrera)"
+        ],
+        correct: 2
+    },
+    {
+        question: "Em que ano Barcelona se tornou sede dos Jogos Olímpicos, transformando a área costeira em um local de lazer com novas praias?",
+        options: [
+            "1982",
+            "1992",
+            "2002",
+            "2012"
+        ],
+        correct: 1
+    },
+    {
+        question: "De acordo com uma das teorias sobre a fundação de Barcelona, quem teria fundado a cidade?",
+        options: [
+            "Romanos",
+            "Gregos",
+            "Amílcar Barca (cartagineses)",
+            "Visigodos"
+        ],
+        correct: 2
+    },
+    {
+        question: "Em que dia do ano é celebrado o Dia de Sant Jordi, que inspirou a UNESCO a declarar o Dia Internacional do Livro?",
+        options: [
+            "14 de fevereiro",
+            "23 de abril",
+            "12 de outubro",
+            "25 de dezembro"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual é a principal característica de Las Ramblas de Barcelona?",
+        options: [
+            "É uma rua tranquila e pouco movimentada",
+            "É um centro financeiro e comercial",
+            "É um célebre local de reunião para turistas e sempre repleto de gente",
+            "É uma área residencial exclusiva"
+        ],
+        correct: 2
+    },
+    {
+        question: "Qual é a principal característica do Bairro Gótico de Barcelona?",
+        options: [
+            "Sua arquitetura moderna e futurista",
+            "Sua arquitetura medieval e sua magia",
+            "Seus arranha-céus e centros comerciais",
+            "Suas praias e vida noturna"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual é o nome da rua em Barcelona considerada a mais movimentada da Espanha, com cerca de 3500 pessoas atravessando-a a cada hora?",
+        options: [
+            "Passeig de Gràcia",
+            "La Rambla",
+            "Puerta del Ángel",
+            "Carrer de Pelai"
+        ],
+        correct: 2
+    },
+    {
+        question: "Com quantos anos Lionel Messi chegou ao FC Barcelona?",
+        options: [
+            "10 anos",
+            "13 anos",
+            "16 anos",
+            "18 anos"
+        ],
+        correct: 1
+    }
+];
+
+// Variáveis do estado do quiz
+let currentQuestion = 0;
+let userAnswers = [];
+let score = 0;
+
+// Elementos DOM
+const startScreen = document.getElementById("start-screen");
+const quizScreen = document.getElementById("quiz-screen");
+const resultScreen = document.getElementById("result-screen");
+const reviewScreen = document.getElementById("review-screen");
+
+const startBtn = document.getElementById("start-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const restartBtn = document.getElementById("restart-btn");
+const reviewBtn = document.getElementById("review-btn");
+const backToResultBtn = document.getElementById("back-to-result");
+
+const progressFill = document.getElementById("progress-fill");
+const questionCounter = document.getElementById("question-counter");
+const questionText = document.getElementById("question-text");
+const optionsContainer = document.getElementById("options-container");
+
+const resultIcon = document.getElementById("result-icon");
+const resultTitle = document.getElementById("result-title");
+const scoreText = document.getElementById("score-text");
+const percentageText = document.getElementById("percentage-text");
+const resultMessage = document.getElementById("result-message");
+
+const reviewContainer = document.getElementById("review-container");
+
+// Event listeners
+startBtn.addEventListener("click", startQuiz);
+prevBtn.addEventListener("click", previousQuestion);
+nextBtn.addEventListener("click", nextQuestion);
+restartBtn.addEventListener("click", restartQuiz);
+reviewBtn.addEventListener("click", showReview);
+backToResultBtn.addEventListener("click", showResults);
+
+// Funções principais
+function startQuiz() {
+    currentQuestion = 0;
+    userAnswers = [];
+    score = 0;
+    
+    showScreen(quizScreen);
+    displayQuestion();
+    updateProgress();
+    updateNavigation();
+}
+
+function showScreen(screen) {
+    document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+    screen.classList.add("active");
+}
+
+function displayQuestion() {
+    const question = quizData[currentQuestion];
+    
+    questionText.textContent = question.question;
+    questionCounter.textContent = `${currentQuestion + 1} / ${quizData.length}`;
+    
+    optionsContainer.innerHTML = "";
+    
+    question.options.forEach((option, index) => {
+        const optionElement = document.createElement("div");
+        optionElement.className = "option";
+        optionElement.innerHTML = `
+            <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+            <span class="option-text">${option}</span>
+        `;
+        
+        optionElement.addEventListener("click", () => selectOption(index));
+        
+        // Marcar opção se já foi selecionada
+        if (userAnswers[currentQuestion] === index) {
+            optionElement.classList.add("selected");
+        }
+        
+        optionsContainer.appendChild(optionElement);
+    });
+}
+
+function selectOption(optionIndex) {
+    // Remover seleção anterior
+    document.querySelectorAll(".option").forEach(opt => opt.classList.remove("selected"));
+    
+    // Adicionar seleção atual
+    document.querySelectorAll(".option")[optionIndex].classList.add("selected");
+    
+    // Salvar resposta
+    userAnswers[currentQuestion] = optionIndex;
+    
+    // Habilitar botão próxima
+    nextBtn.disabled = false;
+}
+
+function updateProgress() {
+    const progress = ((currentQuestion + 1) / quizData.length) * 100;
+    progressFill.style.width = `${progress}%`;
+}
+
+function updateNavigation() {
+    prevBtn.disabled = currentQuestion === 0;
+    
+    if (currentQuestion === quizData.length - 1) {
+        nextBtn.textContent = "Finalizar";
+    } else {
+        nextBtn.textContent = "Próxima";
+    }
+    
+    // Habilitar próxima apenas se houver resposta selecionada
+    nextBtn.disabled = userAnswers[currentQuestion] === undefined;
+}
+
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        displayQuestion();
+        updateProgress();
+        updateNavigation();
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        displayQuestion();
+        updateProgress();
+        updateNavigation();
+    } else {
+        finishQuiz();
+    }
+}
+
+function finishQuiz() {
+    calculateScore();
+    showResults();
+}
+
+function calculateScore() {
+    score = 0;
+    userAnswers.forEach((answer, index) => {
+        if (answer === quizData[index].correct) {
+            score++;
+        }
+    });
+}
+
+function showResults() {
+    const percentage = Math.round((score / quizData.length) * 100);
+    
+    scoreText.textContent = `${score} / ${quizData.length}`;
+    percentageText.textContent = `${percentage}%`;
+    
+    // Definir ícone e mensagem baseado na pontuação
+    if (percentage >= 90) {
+        resultIcon.textContent = "🏆";
+        resultTitle.textContent = "Excelente!";
+        resultMessage.textContent = "Você é um verdadeiro expert em Barcelona!";
+    } else if (percentage >= 70) {
+        resultIcon.textContent = "🎉";
+        resultTitle.textContent = "Parabéns!";
+        resultMessage.textContent = "Você tem um bom conhecimento sobre Barcelona!";
+    } else if (percentage >= 50) {
+        resultIcon.textContent = "👍";
+        resultTitle.textContent = "Bem!";
+        resultMessage.textContent = "Você sabe algumas coisas sobre Barcelona, mas pode melhorar!";
+    } else {
+        resultIcon.textContent = "📚";
+        resultTitle.textContent = "Continue estudando!";
+        resultMessage.textContent = "Que tal aprender mais sobre Barcelona e tentar novamente?";
+    }
+    
+    showScreen(resultScreen);
+}
+
+function showReview() {
+    reviewContainer.innerHTML = "";
+    
+    quizData.forEach((question, index) => {
+        const userAnswer = userAnswers[index];
+        const correctAnswer = question.correct;
+        const isCorrect = userAnswer === correctAnswer;
+        
+        const reviewItem = document.createElement("div");
+        reviewItem.className = `review-item ${isCorrect ? "correct" : "incorrect"}`;
+        
+        reviewItem.innerHTML = `
+            <div class="review-question">${index + 1}. ${question.question}</div>
+            <div class="review-answer user-answer">
+                Sua resposta: ${String.fromCharCode(65 + userAnswer)}) ${question.options[userAnswer]}
+            </div>
+            ${!isCorrect ? `
+                <div class="review-answer correct-answer">
+                    Resposta correta: ${String.fromCharCode(65 + correctAnswer)}) ${question.options[correctAnswer]}
+                </div>
+            ` : ""}
+            <div class="review-status ${isCorrect ? "correct" : "incorrect"}">
+                ${isCorrect ? "✓ Correto" : "✗ Incorreto"}
+            </div>
+        `;
+        
+        reviewContainer.appendChild(reviewItem);
+    });
+    
+    showScreen(reviewScreen);
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    userAnswers = [];
+    score = 0;
+    
+    showScreen(startScreen);
+}
+
+// Inicialização
+document.addEventListener("DOMContentLoaded", function() {
+    showScreen(startScreen);
+});
+    </script>
 
     <footer>
         <h1>2025 - Criado por Lucas Honorato - Todos os direitos reservados</h1>
-    </footer>
+    </footer>   
 
-    <script>
-        const quizData = [
-            { question: "Quem é o maior artilheiro da história do Barcelona?", options: ["Ronaldinho", "Lionel Messi", "Luis Suárez", "Neymar"], answer: "Lionel Messi" },
-            { question: "Em que ano o Barcelona conquistou sua primeira Champions League?", options: ["1992", "2006", "2009", "2015"], answer: "1992" },
-            { question: "Qual jogador ficou conhecido como 'Gaúcho' no Barça?", options: ["Messi", "Ronaldinho", "Xavi", "Iniesta"], answer: "Ronaldinho" },
-            { question: "Quem foi o capitão do Barcelona na final da Champions 2015?", options: ["Xavi", "Puyol", "Iniesta", "Busquets"], answer: "Iniesta" }
-        ];
-
-        let currentQuestion = 0;
-        let score = 0;
-
-        const quiz = document.getElementById("quiz");
-        const result = document.getElementById("result");
-        const nextBtn = document.getElementById("nextBtn");
-
-        function loadQuestion() {
-            if (currentQuestion < quizData.length) {
-                const q = quizData[currentQuestion];
-                quiz.innerHTML = `
-                    <div class="question"><h3>${q.question}</h3></div>
-                    ${q.options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join("")}
-                `;
-            } else {
-                quiz.innerHTML = "";
-                nextBtn.style.display = "none";
-                result.innerHTML = `Você acertou ${score} de ${quizData.length} perguntas!`;
-            }
-        }
-
-        function checkAnswer(answer) {
-            if (answer === quizData[currentQuestion].answer) score++;
-            nextBtn.style.display = "block";
-        }
-
-        function nextQuestion() {
-            currentQuestion++;
-            nextBtn.style.display = "none";
-            loadQuestion();
-        }
-
-        loadQuestion();
-        nextBtn.style.display = "none";
-    </script>
-
-    
-    <main>
-        <section id="contato">
-            <div class="container">
-            </div>
-       </section>
-    </main>
-    
-
-
-
-    <footer>
-        <h1>
-            2025 - Criado por Lucas Honorato - Todos os direitos reservados
-        </h1>
-            
-    </footer>
+</body>
+</html>
