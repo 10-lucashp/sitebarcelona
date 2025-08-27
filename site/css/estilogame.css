@@ -371,7 +371,14 @@ body {
     padding: 20px;
 }
 
-
+.containergame {
+    margin-top: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
 
 .screen {
     background: white;
@@ -756,6 +763,3 @@ body {
         text-align: center;
     }
 }
-
-
-
